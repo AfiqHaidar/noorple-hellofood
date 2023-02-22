@@ -1,0 +1,43 @@
+'use client';
+
+import { motion } from "framer-motion";
+
+export const fadeIn = (direction:string, type:string, delay:number, duration:number) => ({
+    hidden: {
+      x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
+      y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        type,
+        delay,
+        duration,
+        ease: 'easeOut',
+      },
+    },
+  });
+
+const InsightCard = ({imgUrl, title, subtitle, count}:{imgUrl:string, title:string, subtitle:string, count:number}) => (
+  <motion.div variants={fadeIn('up','spring', count*0.5, 1)} className='flex md:flex-row flex-col col gap-4'>
+    <img src={imgUrl} alt="reasons" className="md:w-[270px] w-full h-[250px] rounded-[32px] object-cover"/>
+    <div className="w-full flex justify-between items-center">
+        <div className="flex-1 md:ml-[62px] flex flex-col max-w-[650px]">
+            <h4 className="font-normal lg:text-[42px] text-[26px] text-white">
+                {title}
+            </h4>
+            <p className="mt-[16px] font-normal lg:text-[20px] text-[14px] text-white">
+                {subtitle}
+            </p>
+        </div>
+        <div className="lg:flex hidden items-center justify-center w-[100px] h-[100px] rounded-full bg-transparent border-[1px] border-white">
+            <img src="\logo.png" alt="icon" className='w-[40%] h-[40$] object-contain' />
+        </div>
+    </div>
+  </motion.div>
+);
+
+export default InsightCard;
