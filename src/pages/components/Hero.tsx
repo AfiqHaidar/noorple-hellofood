@@ -15,10 +15,12 @@ const staggerContainer = (staggerChildren : number, delayChildren : number) => (
 
 const slideIn = (direction:string, type:string, delay:number, duration:number) => ({
   hidden: {
+    opacity:0,
     x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
     y: direction === 'up' ? '100%' : direction === 'down' ? '100%' : 0,
   },
   show: {
+    opacity:1,
     x: 0,
     y: 0,
     transition: {
@@ -61,9 +63,8 @@ const Hero = () => {
                 </motion.h1>
             </div>
 
-
             <motion.div variants={slideIn('right','tween',0.2,1)} className='relative w-full md:-mt-[20px] -mt-[12px]'>
-                <div className='absolute w-full h-[300px] hero-gradient rounded-tl-[140px] z-[0] -top-[30px]' />
+                <div className='absolute w-full h-[300px] bg-black rounded-tl-[140px] z-[0] -top-[30px]' />
                     <img src="/hero-cover.jpg" alt="hero-cover" className='w-full sm:h-[500px] h-[350px] object-cover rounded-tl-[140px] z-10 relative'/>
                     <Link href='#reason'>
                         <div className='w-full flex justify-end sm:-mt-[70px] -mt-[50px] pr-[40px] relative z-10'>

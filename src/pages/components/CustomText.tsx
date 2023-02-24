@@ -28,8 +28,8 @@ const textContainer = {
     },
   };
 
-export const TypingText = ({title,styling}:{title:string,styling:any}) => (
-  <motion.p variants={textContainer} className={'font-normal text-[14px] text-white'} >
+export const TypingText = ({title,styling}:{title:string,styling:string}) => (
+  <motion.p variants={textContainer} className={`font-normal text-[14px] text-white ${styling}`} >
     {Array.from(title).map((letter, index) => (
         <motion.span variants={textVariant2} key={index}>
             {letter === ' ' ? '\u00A0' : letter}
@@ -38,8 +38,8 @@ export const TypingText = ({title,styling}:{title:string,styling:any}) => (
   </motion.p>
 );
 
-export const TitleText = ({title}:{title:string}) => (
-  <motion.h2 variants={textVariant2} initial="hidden" whileInView="show" className='mt-[8px] font-bold md:text-[64px] text-[40px] text-white text-center'>
+export const TitleText = ({title, styling} : {title: React.ReactNode ,styling:string}) => (
+  <motion.h2 variants={textVariant2} initial="hidden" whileInView="show" className={`${styling} mt-[8px] font-bold md:text-[64px] text-[40px] text-white`}>
     {title}
   </motion.h2>
 );
