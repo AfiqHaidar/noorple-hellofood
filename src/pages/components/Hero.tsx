@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link';
@@ -49,6 +49,7 @@ const textVariant = (delay:number) => ({
   });
 
 const Hero = () => {
+
   return (
     <section className='sm:py-16 xs:py-8 py-12 sm:pl-16 pl-6'>
         <motion.div variants={staggerContainer(1,1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25}} className='2xl:max-w-[1280px] w-full mx-auto flex flex-col'>

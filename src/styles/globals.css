@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -40,3 +42,17 @@
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
   }
+
+  .footer-gradient {
+    position: absolute;
+    width: 500px;
+    height: 100px;
+    left: 37%;
+    bottom: 0;
+  
+    background: #65c4fa;
+    filter: blur(150px);
+  }
+
+  
+  

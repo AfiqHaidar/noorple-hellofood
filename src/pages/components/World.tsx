@@ -46,10 +46,13 @@ const World = () => {
 
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1 )} className='relative max-w-[1280px] mt-[68px] flex w-full h-[550px]'>
 
-            <img src="/map.png" alt="map" className='w-full h-full object-fit'/>
+            <img src="/map.png" alt="map" className='w-full h-full object-contain'/>
 
-            <WorldCard id='menu-1' position='top-1/2 left-[20%]' imgUrl='/meal-vegan.jpg' active={active} handleClick={setactive}/>
-            <WorldCard id='menu-2' position='top-1/2 right-[45%]' imgUrl='/meal-vegan.jpg' active={active} handleClick={setactive}/>
+            
+              <WorldCard id='menu-1' position='top-1/2 left-[20%]' imgUrl='/meal-vegan.jpg' active={active} handleClick={setactive}/>
+              <WorldCard id='menu-2' position='top-1/2 right-[45%]' imgUrl='/meal-vegan.jpg' active={active} handleClick={setactive}/>
+            
+            
 
           </motion.div>
 

@@ -7,6 +7,7 @@ import Box from './components/Box'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 import World from './components/World'
+import Construct from './components/Construct'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,8 +29,9 @@ export default function Home() {
          <Reason/>
          <Box/>
          <Menu/>
-         <World/> 
+         <World/>
          <Footer/>
+          
         </div>
       </main>
     </>
