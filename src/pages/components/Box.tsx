@@ -34,10 +34,12 @@ const staggerContainer = (staggerChildren : number, delayChildren : number) => (
 
  const planetVariants = (direction: string) => ({
     hidden: {
+        opacity: 0,
       x: direction === 'left' ? '-100%' : '100%',
       rotate: 120,
     },
     show: {
+        opacity:1,
       x: 0,
       rotate: 0,
       transition: {
@@ -52,12 +54,12 @@ const Box = () => {
   return (
     <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10'>
         <motion.div variants={staggerContainer(1,1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25}}  className='2xl:max-w-[1280px] w-full mx-auto flex lg:flex-row flex-col gap-8'>
-            <motion.div variants={planetVariants('left')} className='flex-1 flex justify-center items-center'>
-                <img src="/hero-cover.jpg" alt="box" className='w-[90%] h-[90%] object-contain' />
+            <motion.div variants={planetVariants('left')} className='flex-1 flex justify-center items-center rounded-xl'>
+                <img src="/box-produce.jpg" alt="box" className='w-[90%] h-[90%] object-contain' />
             </motion.div>
             <motion.div variants={fadeIn('left','tween',0.2,1)} className='flex-[0.75] flex justify-center flex-col'>
                 <TypingText title="Cek Cek ricekkk" styling="text-left"/>
-                <TitleText title="HAHA sisis awkidnkawindkanwd asikdnaskind akaisndiasnd"/>
+                <TitleText title={<>HAHA sisis awkidnkawindkanwd asikdnaskind akaisndiasnd</>} styling="text-left"/>
                 <div className='mt-[31px] flex flex-col max-w-[370px] gap-[24px]'>
                     <List angka={1} text="eaaaa"/>
                     <List angka={2} text="haha hihi cuy"/>
