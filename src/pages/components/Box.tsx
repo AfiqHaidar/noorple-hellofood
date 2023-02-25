@@ -54,16 +54,17 @@ const Box = () => {
   return (
     <section className='sm:p-16 xs:p-8 px-6 py-12 relative z-10'>
         <motion.div variants={staggerContainer(1,1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.25}}  className='2xl:max-w-[1280px] w-full mx-auto flex lg:flex-row flex-col gap-8'>
-            <motion.div variants={planetVariants('left')} className='flex-1 flex justify-center items-center rounded-xl'>
-                <img src="/box-produce.jpg" alt="box" className='w-[90%] h-[90%] object-contain' />
+            <motion.div variants={planetVariants('left')} className='flex-1 flex justify-center items-center '>
+                <img src="/box-produce.jpg" alt="box" className='w-[90%] h-[90%] object-contain rounded-[50px]' />
             </motion.div>
-            <motion.div variants={fadeIn('left','tween',0.2,1)} className='flex-[0.75] flex justify-center flex-col'>
-                <TypingText title="Cek Cek ricekkk" styling="text-left"/>
-                <TitleText title={<>HAHA sisis awkidnkawindkanwd asikdnaskind akaisndiasnd</>} styling="text-left"/>
+            <motion.div variants={fadeIn('left','tween',1.5,1)} className='flex-[0.75] flex justify-center flex-col'>
+                <TypingText title="| Reason" styling="text-center"/>
+                <TitleText title={<>Why HelloFood?</>} styling="text-center"/>
                 <div className='mt-[31px] flex flex-col max-w-[370px] gap-[24px]'>
-                    <List angka={1} text="eaaaa"/>
-                    <List angka={2} text="haha hihi cuy"/>
-                    <List angka={3} text="wkwkkw wkwkw wkwkw"/>
+                    <List imgUrl='/reason-protein.png' text="No skimpin' on the chicken!"/>
+                    <List imgUrl='/reason-shipped.png' text="No commitment whatsoever"/>
+                    <List imgUrl='/reason-5star.png' text="The most 5-star reviews"/>
+                    <List imgUrl='/reason-vegetable.png'text="Fresh and affordable"/>
                 </div>
             </motion.div>
         </motion.div>

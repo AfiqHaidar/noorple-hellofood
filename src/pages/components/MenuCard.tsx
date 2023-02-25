@@ -24,7 +24,8 @@ const MenuCard = ({id, imgUrl, title, index, active, handleClick}:{id:string, im
   return (
     <motion.div variants={fadeIn('right', 'spring', index*0.5, 0.75)} 
     className={`relative ${active===id ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'} 
-    flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
+    flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer
+    hover:shadow-xl hover:shadow-slate-300 hover:duration-150 hover:rounded-[24px]`}
     onClick={()=> handleClick(id)} >
         <img src={imgUrl} alt="img-card" className='absolute w-full h-full object-cover rounded-[24px]'/>
         {active !== id ? (
@@ -37,7 +38,7 @@ const MenuCard = ({id, imgUrl, title, index, active, handleClick}:{id:string, im
                     <img src="/right-arrow.png" alt="mboh" className='w-1/2 h-1/2 object-contain' />
                 </div>
                 <p className='font-normal text-[16px] leading-[20px] text-white uppercase'>
-                    Enter the menu
+                    Explore Recipes
                 </p>
                 <h2 className='mt-[24px] font-semibold sm:text-[32px] text-[24px] text-white'>
                     {title}

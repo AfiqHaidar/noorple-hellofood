@@ -7,7 +7,10 @@ import Box from './components/Box'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 import World from './components/World'
-import Construct from './components/Construct'
+import AddressForm from './AddresForm'
+import MultistepsForm from './components/MultistepsForm'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,11 +29,13 @@ export default function Home() {
         <div className='bg-gray-700'>
          <Navbar/>
          <Hero/>
-         <Reason/>
          <Box/>
          <Menu/>
-         <World/>
+         <World/> 
+         <Reason/>
          <Footer/>
+         {/* <AddressForm/> */}
+         {/* <MultistepsForm/> */}
           
         </div>
       </main>

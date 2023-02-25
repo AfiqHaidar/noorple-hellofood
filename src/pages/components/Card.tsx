@@ -22,8 +22,11 @@ export const fadeIn = (direction:string, type:string, delay:number, duration:num
   });
 
 const InsightCard = ({imgUrl, title, subtitle, count}:{imgUrl:string, title:string, subtitle:string, count:number}) => (
-  <motion.div variants={fadeIn('up','spring', count*0.5, 1)} className='flex md:flex-row flex-col col gap-4'>
-    <img src={imgUrl} alt="reasons" className="md:w-[270px] w-full h-[250px] rounded-[32px] object-cover"/>
+  <motion.div variants={fadeIn('up','spring', count*0.5, 1)} className='flex md:flex-row flex-col gap-4 justify-evenly items-center'>
+    <div>
+       <img src={imgUrl} alt="reasons" className="md:w-[270px] w-full h-[250px] rounded-[32px] object-cover"/>
+    </div>
+   
     <div className="w-full flex justify-between items-center">
         <div className="flex-1 md:ml-[62px] flex flex-col max-w-[650px]">
             <h4 className="font-normal lg:text-[42px] text-[26px] text-white">
@@ -33,9 +36,10 @@ const InsightCard = ({imgUrl, title, subtitle, count}:{imgUrl:string, title:stri
                 {subtitle}
             </p>
         </div>
-        <div className="lg:flex hidden items-center justify-center w-[100px] h-[100px] rounded-full bg-transparent border-[1px] border-white">
+      
+        {/* <div className="lg:flex hidden items-center justify-center w-[100px] h-[100px] rounded-full bg-transparent border-[1px] border-white">
             <img src="\right-arrow.png" alt="icon" className='w-[40%] h-[40$] object-contain' />
-        </div>
+        </div> */}
     </div>
   </motion.div>
 );
