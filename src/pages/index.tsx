@@ -7,8 +7,8 @@ import Box from './components/Box'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 import World from './components/World'
-import AddressForm from './AddresForm'
-import MultistepsForm from './components/MultistepsForm'
+import AddressForm from './LoginForm'
+import MultistepsForm from './MultistepsForm'
 
 
 

@@ -40,18 +40,14 @@ export default function Register() {
                           }
                         )} placeholder="Phone Number"  />
                         <label htmlFor="Gender" >Gender</label>
+                        
                         <select {...register("gender", { required: true })}>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                             <option value="Other">Other</option>
                         </select>
                         <label htmlFor="isAdmin" >Admin RPL 2023?</label>
-                        <div className='flex gap-3'>
-                            <label htmlFor="" >Yes</label>
-                            <input {...register("isAdmin", { required: true })} type="radio" value="Yes" />
-                            <label htmlFor="" >No</label>
-                            <input {...register("isAdmin", { required: true })} type="radio" value="No" />
-                        </div>
+                        
                         <input type="submit" className='rounded w-[384px] h-[48px] cursor-pointer bg-pink-300'/>
                     </form>
                 </section>

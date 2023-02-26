@@ -38,11 +38,11 @@ const Navbar = () => {
 
         <div className='flex gap-5 items-center'>
           <div className='opacity-70 hover:opacity-100 hover:scale-105 ease-in duration-300'>
-            <Link className='font-normal text-white hover:text-slate-200 ' href="/AddresForm">LOG IN </Link>
+            <Link className='font-normal text-white hover:text-slate-200 ' href="/LoginForm">LOG IN </Link>
           </div>
   
           <div  className='opacity-70 hover:opacity-100 hover:scale-105 ease-in duration-300'>
-            <Link className='font-normal text-white hover:text-slate-200 ' href="/AddresForm">SIGN IN</Link>
+            <Link className='font-normal text-white hover:text-slate-200 ' href="/ShippingForm">SIGN IN</Link>
           </div>
         </div>
 

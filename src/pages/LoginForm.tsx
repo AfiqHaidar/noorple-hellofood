@@ -63,6 +63,8 @@ export default function Home() {
     }
 }, [formState, reset])
 
+console.log(watch(['email','pass']));
+
 
   return (
   <>
@@ -93,7 +95,8 @@ export default function Home() {
           <input type="text" placeholder='Email' className='p-2 rounded-xl h-9' 
           {...register("email", { required: true, pattern:{
             value:  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-            message: "invalid email address"
+            message: "invalid email address",
+            
           }})}/>
 
           <p className='text-red-300'> {errors.email?.message} </p>

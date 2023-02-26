@@ -1,10 +1,52 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
+import { useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
+type FormValues = {
+    firstName: string
+    lastName: string
+}
+
 export default function Home() {
+
+    const [firstName, setFirstName] = useState('');
+
+    const {
+        register,
+        handleSubmit,
+        watch,
+        reset,
+        getValues,
+        formState,
+        formState: { errors, isSubmitting, defaultValues, isSubmitSuccessful },
+      } = useForm<FormValues>({
+        defaultValues: {
+            firstName: 'Afiq',
+            lastName : 'Haidar'
+        }
+      });
+
+      const onSubmit = (data: FormValues) => {
+        console.log(data);
+        reset();
+      };
+
+      console.log(watch(['firstName','lastName']));
+    //   console.log("errorere", errors)
+
+    useEffect(()=>{
+        if(formState.isSubmitSuccessful){
+            reset({
+                firstName:'Hihi',
+                lastName:'Jackson'
+            })
+        }
+    }, [formState, reset])
+    
   return (
     <>
       <Head>
@@ -16,8 +58,28 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='bg-gray-700 w-screen h-screen'>
-          
+        <div className='bg-gray-700 w-screen h-screen flex justify-center items-center '>
+            <form onSubmit={handleSubmit((data)=>{
+                console.log(data)
+            })} action="" className='flex flex-col gap-3'>
+                <p className='font-bold text-white'> Sign Up</p>
+
+                <input type="text" placeholder='first name' {...register("firstName", { required: 'yg bner bner aj bng' , minLength:{value:6, message:'bro 6'}})}/>
+                <p className='text-red-300'> {errors.firstName?.message} </p>
+                <input  type="text" placeholder='last name' {...register("lastName", { required: true })}/>
+
+                <input type="submit" className='text-slate-200 rounded-xl font-semibold bg-gray-800 py-1' />
+
+                <button type='button' onClick={()=>{
+                    reset({ 
+                        ...getValues(),
+                        firstName: 'Javaaaa',
+                        lastName: 'Praaadaaaa'
+                    }
+                    )
+                }}>reset bng</button>
+
+            </form>
         </div>
       </main>
     </>
