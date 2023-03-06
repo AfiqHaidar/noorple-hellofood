@@ -2,9 +2,9 @@ import Head from 'next/head'
 import React, { FormEvent, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
-import { TitleText, TypingText } from './components/CustomText'
-import { MultistepsHook } from './components/MultistepsHook'
-import  dummyMForm  from './components/dummyMForm'
+import { TitleText, TypingText } from '../pages/components/CustomText'
+import { MultistepsHook } from '../pages/components/hold/MultistepsHook'
+import  dummyMForm  from '../pages/components/hold/dummyMForm'
 
 type FormData = {
   email: string
@@ -27,7 +27,7 @@ export default function Home()  {
   }
 
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next} = MultistepsHook([
-    <dummyMForm {...data} updateFields={updateFields}/>,
+    // <dummyMForm {...data} updateFields={updateFields}/>,
     <div>second</div>,
     <div>third</div>,
 

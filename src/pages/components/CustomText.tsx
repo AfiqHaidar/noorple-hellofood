@@ -23,7 +23,8 @@ const textContainer = {
       y: 0,
       transition: {
         type: 'tween',
-        ease: 'easeIn',
+        ease: 'easeOut',
+        duration: 1,
       },
     },
   };

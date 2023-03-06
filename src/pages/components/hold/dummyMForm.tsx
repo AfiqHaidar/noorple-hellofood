@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { motion } from 'framer-motion'
-import { TitleText, TypingText } from './CustomText'
+import { TitleText, TypingText } from '../CustomText'
 
 const staggerContainer = (staggerChildren: number, delayChildren: number) => ({
   hidden: {},
